@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+root 'pages#home'
+get "about" => "pages#about" #about is url, can change | then pages#about is controller 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
