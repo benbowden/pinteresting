@@ -10,13 +10,26 @@
       </button>
       <%= link_to "Pinteresting", root_path, class: "navbar-brand" %>
     </div>
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    <% else %>
+       <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li> 
+          <li><%= link_to "Sign In", new_user_session_path %></li> 
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li> 
-      </ul>
-    </div><!-- /.navbar-collapse -->
+    <% end %>
+
   </div><!-- /.navbar-container -->
+   
 </nav>

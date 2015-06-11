@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #set to actual hostname
+  config.action_mailer.default_url_options = { host: 'https://gentle-retreat-5356.herokuapp.com/'}
 end
